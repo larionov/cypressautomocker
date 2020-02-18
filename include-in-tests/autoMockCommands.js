@@ -177,7 +177,7 @@ function registerAutoMockCommands() {
                 let contentType = xhr.getResponseHeader("content-type");
                 if (
                   contentType !== null &&
-                  contentType.toLowerCase().indexOf("application/json") !== -1
+                  contentType.toLowerCase().replace('x-thrift+', '').indexOf("application/json") !== -1
                 ) {
                   try {
                     responseObject = JSON.parse(responseObject);
